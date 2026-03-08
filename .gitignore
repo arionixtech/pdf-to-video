@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials
+*.key
+*.pem
+credentials.json
