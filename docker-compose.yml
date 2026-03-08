@@ -23,7 +23,7 @@ services:
     networks:
       - arionix-network
     environment:
-      - NEXT_PUBLIC_API_URL=https://pdf-to-video.arionixtech.com/api
+      - NEXT_PUBLIC_API_URL=https://pdf-to-video.arionixtech.com
 
 networks:
   arionix-network:
