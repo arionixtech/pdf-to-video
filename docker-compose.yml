@@ -1,0 +1,30 @@
+services:
+  backend:
+    build: ./backend
+    container_name: pdf-to-video-backend
+    restart: unless-stopped
+    ports:
+      - "8001:8000"
+    volumes:
+      - /var/arionix/data/pdf-to-video:/var/arionix/data/pdf-to-video
+    networks:
+      - arionix-network
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: pdf-to-video-frontend
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    networks:
+      - arionix-network
+    environment:
+      - NEXT_PUBLIC_API_URL=https://pdf-to-video.arionixtech.com/api
+
+networks:
+  arionix-network:
+    external: true
